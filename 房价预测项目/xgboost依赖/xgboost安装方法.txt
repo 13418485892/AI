@@ -1,0 +1,13 @@
+本人win10，64位，python版本为3.6
+
+想要安装Xgboost，之前在网上看过很多文章步骤都比较复杂，直到有一天看到了一种超级简单的方法，亲测有效果！！
+
+只需要两步：
+
+Step1 
+下载xgboost.whl, 网站是xgboost.whl。在里面找到和自己系统版本对应的下载。
+
+Step2 
+打开cmd，输入 pip install F:\xgboost-0.71-cp36-cp36m-win_amd64.whl。install后面写自己.whl所在的路径名。
+
+然后就搞定啦，去自己的IDLE中import xgboost就可以了。

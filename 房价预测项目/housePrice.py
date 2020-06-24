@@ -5,7 +5,7 @@ from sklearn.linear_model import Ridge, LassoCV
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
+import seaborn as sns               # Seaborn是基于matplotlib的Python可视化库
 
 # 忽略警告
 import warnings
@@ -30,15 +30,16 @@ all_data.drop(labels=["SalePrice"], axis=1, inplace=True)
 
 # ------------------------------------- 2 查看房价分布 ----------------------------------
 # 查看训练集的房价分布，左图是原始房价分布，右图是将房价对数化之后的分布
-fig = plt.figure(figsize=(12, 5))
-ax1 = fig.add_subplot(121)
-ax2 = fig.add_subplot(122)
+fig = plt.figure(figsize=(12, 5))               # 使用plt.figure来设置窗口尺寸, 其中12为宽, 5为高
+ax1 = fig.add_subplot(121)                      # 1x2网格, 第1子图
+ax2 = fig.add_subplot(122)                      # 1x2网格, 第2子图
+
 g1 = sns.distplot(train['SalePrice'], hist=True, label='skewness:{:.2f}'.format(
-    train['SalePrice'].skew()), ax=ax1)
+    train['SalePrice'].skew()), ax=ax1)                  # sns图形库画直方图
 g1.legend()
 g1.set(xlabel='Price')
 g2 = sns.distplot(np.log1p(train['SalePrice']), hist=True, label='skewness:{:.2f}'.format(
-    np.log1p(train['SalePrice']).skew()), ax=ax2)
+    np.log1p(train['SalePrice']).skew()), ax=ax2)        # sns图形库画直方图
 g2.legend()
 g2.set(xlabel='log(Price+1)')
 plt.show()
